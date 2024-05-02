@@ -1,0 +1,21 @@
+@use "../partials/mixins" as m;
+@use "../partials/functions" as f;
+.bioCard {
+	@include m.flexbox(column, nowrap, flex-start, center);
+	width: f.rem(320);
+	border-radius: f.rem(16);
+	background-color: var(--blue-700);
+	position: relative;
+	overflow: hidden;
+	&__header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: f.rem(16);
+		@include m.flexbox(row, nowrap, flex-end, flex-start);
+	}
+	&__button {
+		@include m.resetButton;
+	}
+}

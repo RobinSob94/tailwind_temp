@@ -1,0 +1,21 @@
+@use "../partials/variables" as v;
+@use "sass:map";
+
+$containerSizes: (
+	sm: 560px,
+	md: 680px,
+	lg: 960px,
+	xl: 1160px,
+	xxl: 1280px,
+);
+
+.container {
+	padding: 0 1rem;
+	margin: auto;
+
+	@each $name, $size in v.$breakpoints {
+		@media (width > $size) {
+			width: map.get($containerSizes, $name);
+		}
+	}
+}

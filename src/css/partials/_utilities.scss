@@ -1,0 +1,10 @@
+@use "variables" as v;
+
+@for $i from 0 through 6 {
+	.mt-#{$i} {
+		margin-top: $i * v.$step !important;
+	}
+	.mb-#{$i} {
+		margin-bottom: $i * v.$step !important;
+	}
+}
